@@ -179,6 +179,12 @@ Lo nuevo de cada versión está en [NOVEDADES.md](NOVEDADES.md).
 - Fotos: [Lorem Picsum](https://picsum.photos), que usa fotos de [Unsplash](https://unsplash.com).
 - Letra de los carteles: *Ink Free*, que viene con Windows.
 
+## Agradecimientos
+
+Este proyecto lo hice mientras aprendía a programar puede que haya errores, con la ayuda de [Claude Code](https://github.com/anthropics/claude-code) puede hacerlo mas vistoso, el asistente de programación de Anthropic. Gracias, Claude, por la paciencia y por dejar que tu mascota viva en mi escritorio 🦀
+
+Agradezco tambien a quienes me enseñaron las bases de esto, Gracias.
+
 ## Licencia
 
 El código es libre bajo la [licencia MIT](LICENSE). El personaje de Clawd pertenece a Anthropic.
