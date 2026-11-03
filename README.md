@@ -99,11 +99,23 @@ Pillow es opcional: sin Pillow funciona igual, pero te trae postales en vez de f
 ## Crear el .exe
 
 ```bash
-py -m pip install pyinstaller
+py -m pip install pyinstaller pillow
+```
+
+```bash
 construir_exe.bat
 ```
 
-El `.exe` aparece en `dist\Clawd.exe`.
+Tarda un minuto más o menos. Al terminar, en la carpeta del proyecto aparecen dos carpetas nuevas:
+
+| Carpeta | Qué es |
+|---|---|
+| `dist\` | **Aquí está `Clawd.exe`**, listo para usar |
+| `build\` | Archivos temporales de la construcción. Puedes borrarla |
+
+`Clawd.exe` funciona solo, sin el resto de archivos del proyecto, así que puedes moverlo a donde quieras (por ejemplo a `Documentos\Clawd`). Tus ajustes se guardan en un `clawd_datos.json` que aparece al lado del `.exe`. Si lo mueves, mueve ese archivo con él.
+
+Las dos carpetas están en el `.gitignore`, así que no se suben a GitHub. Para compartir el `.exe`, súbelo en una *Release*.
 
 ## Cómo está hecho
 
