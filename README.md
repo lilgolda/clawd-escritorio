@@ -1,12 +1,39 @@
-# Clawd de escritorio
+<p align="center">
+  <img src="docs/banner.png" alt="Clawd de escritorio: una mascota en píxeles que vive en tu Windows">
+</p>
 
-Una mascota en píxeles que vive en tu escritorio de Windows: pasea, se cuelga de tu ratón con un hilo de telaraña, te trae postales que pinta él, saca su laptop cuando escribes y te recuerda que descanses la vista.
+<p align="center">
+  <a href="https://github.com/lilgolda/clawd-escritorio/releases/latest"><img src="https://img.shields.io/badge/Descargar-Clawd.exe-D97757?style=for-the-badge&logo=windows&logoColor=white" alt="Descargar Clawd.exe"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-378ADD?style=flat-square&logo=windows&logoColor=white" alt="Windows 10 y 11">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.10 o más nuevo">
+  <img src="https://img.shields.io/github/v/release/lilgolda/clawd-escritorio?style=flat-square&label=versi%C3%B3n&color=5DCAA5" alt="Última versión">
+  <img src="https://img.shields.io/github/downloads/lilgolda/clawd-escritorio/total?style=flat-square&label=descargas&color=7F77DD" alt="Descargas">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-MIT-EF9F27?style=flat-square" alt="Licencia MIT"></a>
+</p>
+
+<p align="center">
+  <a href="#qué-sabe-hacer">Qué sabe hacer</a> ·
+  <a href="#descargar">Descargar</a> ·
+  <a href="#cómo-se-usa">Cómo se usa</a> ·
+  <a href="#privacidad">Privacidad</a> ·
+  <a href="#cómo-está-hecho">Cómo está hecho</a> ·
+  <a href="#contribuir">Contribuir</a> ·
+  <a href="#in-english">English</a>
+</p>
+
+---
+
+Clawd pasea por encima de tu barra de tareas, se cuelga de tu ratón con un hilo de telaraña, te trae postales que pinta él, saca su laptop cuando escribes y te recuerda que descanses la vista.
 
 <p align="center">
   <img src="docs/telarana.gif" alt="Clawd colgado del ratón con un hilo de telaraña, balanceándose" width="420">
 </p>
 
-> **Aviso:** es un proyecto de fans, hecho por gusto y sin relación oficial con Anthropic. Clawd es la mascota de Claude Code; aquí solo le hemos dado una casa en el escritorio.
+> [!NOTE]
+> Es un proyecto de fans, hecho por gusto y sin relación oficial con Anthropic. Clawd es la mascota de Claude Code; aquí solo le hemos dado una casa en el escritorio.
 
 ## Qué sabe hacer
 
@@ -51,10 +78,11 @@ Pídele que te recuerde algo y, cuando llegue la hora, aparece corriendo con un 
 
 ## Descargar
 
-1. Ve a [**Releases**](../../releases) y descarga `Clawd.exe`.
+1. Ve a la [**última versión**](https://github.com/lilgolda/clawd-escritorio/releases/latest) y descarga `Clawd.exe`.
 2. Ábrelo con doble clic. No hace falta instalar nada.
 
-La primera vez, Windows puede mostrar un aviso de "Windows protegió su PC", porque el programa no está firmado (firmarlo cuesta dinero). Pulsa **Más información → Ejecutar de todas formas**. Si prefieres no fiarte de un `.exe`, puedes ejecutarlo desde el código (abajo): es exactamente lo mismo.
+> [!TIP]
+> La primera vez, Windows puede mostrar un aviso de "Windows protegió su PC", porque el programa no está firmado (firmarlo cuesta dinero). Pulsa **Más información → Ejecutar de todas formas**. Si prefieres no fiarte de un `.exe`, puedes [ejecutarlo desde el código](#ejecutarlo-desde-el-código): es exactamente lo mismo.
 
 Tus ajustes y recordatorios se guardan en `clawd_datos.json`, al lado del `.exe`.
 
@@ -141,11 +169,9 @@ Algunas ideas por si quieres trastear:
 
 ## Contribuir
 
-¡Las ideas y mejoras son bienvenidas! Abre un *issue* o un *pull request*. Si añades algo que se ve, puedes regenerar las imágenes con:
+¡Las ideas y mejoras son bienvenidas! Puedes [contar una idea](https://github.com/lilgolda/clawd-escritorio/issues/new?template=idea.yml), [avisar de un error](https://github.com/lilgolda/clawd-escritorio/issues/new?template=error.yml) o mandar un *pull request*. En [CONTRIBUIR.md](CONTRIBUIR.md) está explicado paso a paso, también si es tu primera vez.
 
-```bash
-py herramientas/generar_imagenes.py
-```
+Lo nuevo de cada versión está en [NOVEDADES.md](NOVEDADES.md).
 
 ## Créditos
 
@@ -156,3 +182,13 @@ py herramientas/generar_imagenes.py
 ## Licencia
 
 El código es libre bajo la [licencia MIT](LICENSE). El personaje de Clawd pertenece a Anthropic.
+
+## In English
+
+**Clawd de escritorio** is a pixel-art desktop pet for Windows. Clawd walks along your taskbar, swings from your mouse cursor on a physics-based spider-web thread, brings you postcards it paints itself, pulls out a tiny laptop when you type, dances to your music and reminds you to take breaks with handwritten notes. It also has costumes, cookies, a friend called Bit, weather awareness and a tray icon.
+
+[Download `Clawd.exe`](https://github.com/lilgolda/clawd-escritorio/releases/latest) and double-click it, or run it from source with `pyw clawd_escritorio.py` (Python 3.10+, optional `pip install pillow`). The interface is in Spanish. This is an unofficial fan project, not affiliated with Anthropic.
+
+---
+
+<p align="center">Hecho con cariño, píxel a píxel 🦀</p>

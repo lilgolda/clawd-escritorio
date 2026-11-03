@@ -1,0 +1,16 @@
+name: Tengo una idea
+description: Algo nuevo que podría hacer Clawd
+labels: ["idea"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: ¿Qué te gustaría que hiciera?
+      placeholder: Que en verano se ponga un bañador y se tire a la papelera como si fuera una piscina.
+    validations:
+      required: true
+  - type: textarea
+    id: dibujo
+    attributes:
+      label: ¿Tienes un dibujo o una referencia?
+      description: Una captura, un boceto o los píxeles escritos como en dibujos.py. ¡Todo ayuda!
