@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# Lo que genera PyInstaller
+build/
+dist/
+*.spec
+
+# Tus ajustes y recordatorios (son tuyos, no del proyecto)
+clawd_datos.json
+docs/_ajustes_temporales.json

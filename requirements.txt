@@ -1,0 +1,2 @@
+# Opcional: fotos de internet e icono propio junto al reloj
+pillow
