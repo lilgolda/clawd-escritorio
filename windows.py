@@ -144,8 +144,44 @@ class MONITORINFO(ctypes.Structure):
                 ("rcWork", wintypes.RECT), ("dwFlags", wintypes.DWORD)]
 
 
+kernel32.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+kernel32.OpenProcess.restype = wintypes.HANDLE
+kernel32.QueryFullProcessImageNameW.argtypes = [wintypes.HANDLE, wintypes.DWORD, wintypes.LPWSTR,
+                                                ctypes.POINTER(wintypes.DWORD)]
+kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
+
+
+def programa_de(hwnd):
+    """Nombre del programa dueño de una ventana, en minúsculas (p. ej. "snippingtool.exe")."""
+    pid = wintypes.DWORD()
+    user32.GetWindowThreadProcessId(hwnd, ctypes.byref(pid))
+    proceso = kernel32.OpenProcess(0x1000, False, pid.value)  # PROCESS_QUERY_LIMITED_INFORMATION
+    if not proceso:
+        return ""
+    buf = ctypes.create_unicode_buffer(260)
+    largo = wintypes.DWORD(260)
+    try:
+        if not kernel32.QueryFullProcessImageNameW(proceso, 0, buf, ctypes.byref(largo)):
+            return ""
+    finally:
+        kernel32.CloseHandle(proceso)
+    return os.path.basename(buf.value).lower()
+
+
+# Programas para hacer capturas o grabar la pantalla: se ponen a pantalla completa
+# mientras eliges qué capturar, pero ahí Clawd tiene que seguir visible para salir en la foto
+CAPTURADORES = {
+    "snippingtool.exe", "screenclippinghost.exe", "screensketch.exe",  # recortes de Windows
+    "gamebar.exe",                                                     # Xbox Game Bar (Win + G)
+    "sharex.exe", "lightshot.exe", "greenshot.exe", "screentogif.exe", "flameshot.exe",
+}
+
+
 def hay_pantalla_completa():
     """True si estás jugando, viendo un vídeo o presentando a pantalla completa."""
+    hwnd = user32.GetForegroundWindow()
+    if hwnd and programa_de(hwnd) in CAPTURADORES:
+        return False  # estás haciendo una captura: ¡que salga Clawd!
     estado = ctypes.c_int(0)
     try:
         # 2 = app a pantalla completa, 3 = juego, 4 = modo presentación
@@ -153,7 +189,6 @@ def hay_pantalla_completa():
             return True
     except Exception:
         pass
-    hwnd = user32.GetForegroundWindow()
     if not hwnd or clase_de(hwnd) in ("Progman", "WorkerW") or _es_de_este_programa(hwnd):
         return False
     r = wintypes.RECT()

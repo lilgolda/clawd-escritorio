@@ -1,5 +1,9 @@
 # Novedades
 
+## v1.0.1
+
+- Clawd ya sale en tus capturas: antes se escondía al abrir la herramienta de recortes (`Win + Shift + S`), porque la confundía con un juego a pantalla completa. Ahora tampoco se esconde con la Xbox Game Bar, ShareX, Lightshot, Greenshot, ScreenToGif ni Flameshot.
+
 ## v1.0 — Primera versión
 
 **Clawd**
